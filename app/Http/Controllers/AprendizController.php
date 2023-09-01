@@ -130,9 +130,6 @@ class AprendizController extends Controller
         }
 
         return back()->with('error', 'El archivo PDF no se encontró.');
-
-
-        
     }
 
 
