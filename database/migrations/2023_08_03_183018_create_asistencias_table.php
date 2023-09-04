@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->dateTime('date');
+            $table->dateTime('create_at_salida');
             $table->foreign('user_id')->references('code')->on('users');
             $table->timestamps();
         });
