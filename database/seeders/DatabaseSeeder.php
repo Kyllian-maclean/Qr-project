@@ -35,10 +35,10 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'code' => 1,
-            'first_name' => 'andres',
-            'last_name' => 'gomez',
-            'email' => 'andres@gmail',
-            'password' => bcrypt('12345'),
+            'first_name' => 'Super',
+            'last_name' => 'Admin',
+            'email' => 'admin@gmail',
+            'password' => bcrypt('123'),
         ]);
         UserRol::create([
             'user_id' => 1,
