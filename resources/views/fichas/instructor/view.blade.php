@@ -34,7 +34,7 @@
     <br>
     <br>
     <h1>Aprendices</h1>
-    <a href="{{ route('fichas.instructor.marcar', $ficha->code) }}" class="btn btn-primary">Marcar</a>
+    <a href="{{ route('fichas.instructor.marcar', $ficha->code) }}" class="btn btn-primary">QR</a>
     <table class="table mt-3">
         <thead>
             <tr>
@@ -52,6 +52,10 @@
                         <td>{{ $student->status }}</td>
                         <td>
                             <a  class="btn btn-primary" href="{{ route('fichas.instructor.asistences', ['user' => $student->code,'ficha' => $ficha]) }}">Ver asistencias</a>
+                            <form  style="display: inline;" action="{{ route('fichas.instructor.asistence', ['user' => $student->code,'ficha' => $ficha->code]) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Marcar Asistencia</button>
+                            </form>
                         </td>
                     </tr>
             @endforeach
@@ -63,10 +67,10 @@
     <table class="table mt-3">
         <thead>
             <tr>
-                <th>Codigo</th>
+                <th>User_ID</th>
                 <th>Nombre</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                <th>Entrada</th>
+                <th>Salida</th>
             </tr>
         </thead>
         <tbody>
