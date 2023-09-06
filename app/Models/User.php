@@ -66,4 +66,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Ficha::class, 'students_fichas', 'user_id', 'ficha_id');
     }
+
+    public function asistencias()
+    {
+        return $this->hasMany(Asistencia::class, 'user_id');
+    }
 }

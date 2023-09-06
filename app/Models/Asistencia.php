@@ -15,4 +15,9 @@ class Asistencia extends Model
         'create_at_salida'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'code');
+    }
+
 }

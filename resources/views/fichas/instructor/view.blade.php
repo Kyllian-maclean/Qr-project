@@ -73,7 +73,16 @@
                 <th>Salida</th>
             </tr>
         </thead>
+
         <tbody>
+        @foreach ($asistencias as $asistencia)
+            <tr>
+                <td>{{ $asistencia->user_id}}</td>
+                <td>{{ $asistencia->first_name}} {{ $asistencia->last_name}}</td>
+                <td>{{ $asistencia->date}}</td>
+                <td>{{ $asistencia->create_at_salida }}</td>
+            </tr>
+        @endforeach
             
         </tbody>
     </table>
