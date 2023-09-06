@@ -52,7 +52,7 @@
                         <td>{{ $student->status }}</td>
                         <td>
                             <a  class="btn btn-primary" href="{{ route('fichas.instructor.asistences', ['user' => $student->code,'ficha' => $ficha]) }}">Ver asistencias</a>
-                            <form  style="display: inline;" action="{{ route('fichas.instructor.asistenceQr', ['user' => $student->code,'ficha' => $ficha]) }}" method="post">
+                            <form  style="display: inline;" action="{{ route('fichas.instructor.asistence', ['user' => $student->code,'ficha' => $ficha->code]) }}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Marcar Asistencia</button>
                             </form>

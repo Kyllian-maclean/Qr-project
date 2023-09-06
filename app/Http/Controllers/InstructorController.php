@@ -36,25 +36,138 @@ public function viewOneFicha($code)
 
     return view('fichas.instructor.view', compact('ficha', 'students'));
 }
-public function createAsistence($code, Ficha $ficha)
+public function createAsistence($code, $ficha)
 {
     date_default_timezone_set('America/Bogota');
+    $date = date('Y-m-d H:i:s');
+    $dateTime =  date('Y-m-d');
 
     $user = User::where('code', $code)
     ->where('status', 'active')
+    ->join('students_fichas', 'students_fichas.user_id', '=', 'users.code')
+    ->where('students_fichas.ficha_id', $ficha)
+    ->first(); 
+
+    $salida = Asistencia::where('user_id', $code)
+    ->where(DB::raw('DATE(date)'), $dateTime)
+    ->where('create_at_salida', null)
     ->first();
 
-    if (!$user) {
-        return redirect()->route('fichas.instructor.view', ['ficha' => $ficha])->with('error', 'El usuario no existe o no está activo.');
+    $asistencia = Asistencia::where('user_id', $code)
+    ->where(DB::raw('DATE(date)'), $dateTime)
+    ->first();
+
+    if (!$asistencia || !$salida) {
+
+        if (!$user) {
+            return redirect()->route('fichas.instructor.view', ['ficha' => $ficha])->with('error', 'El usuario no existe o no está activo.');
+        }
+
+        date_default_timezone_set('America/Bogota');
+
+        Asistencia::create([
+            'user_id' => (int)$code,
+            'date' => $date
+        ]);
+    
+        return redirect()->route('fichas.instructor.view', ['ficha' => $ficha])->with('success', 'Asistencia registrada con éxito.');
+
+    }else{
+
+        if (!$user) {
+            return redirect()->route('fichas.instructor.view', ['ficha' => $ficha])->with('error', 'El usuario no existe o no está activo.');
+        }
+
+
+        $salida = Asistencia::where('user_id', $code)
+        ->where(DB::raw('DATE(date)'), $dateTime)
+        ->where('create_at_salida', null)
+        ->first();
+    
+        if ($salida) {
+            $salida->update([
+                'create_at_salida' => $date
+            ]);
+
+        }
+
+        return redirect()->route('fichas.instructor.view', ['ficha' => $ficha])->with('success', 'Salida registrada con éxito.');
+
+    }
+}
+
+public function createAsistenceQr(Request $request)
+{
+    
+    date_default_timezone_set('America/Bogota');
+    $date = date('Y-m-d H:i:s');
+    $dateTime =  date('Y-m-d');
+
+    $datos = $request->all();
+    $code = $datos["datos"];
+    $ficha = $datos["ficha"];   
+
+    $user = User::where('code', $code)
+    ->where('status', 'active')
+    ->join('students_fichas', 'students_fichas.user_id', '=', 'users.code')
+    ->where('students_fichas.ficha_id', $ficha)
+    ->first(); 
+
+    $salida = Asistencia::where('user_id', $code)
+    ->where(DB::raw('DATE(date)'), $dateTime)
+    ->where('create_at_salida', null)
+    ->first();
+
+    $asistencia = Asistencia::where('user_id', $code)
+    ->where(DB::raw('DATE(date)'), $dateTime)
+    ->first();
+
+    if ($datos['capturar'] == 'ok' && (!$asistencia || !$salida)) {
+        dd($ficha);
+        if (isset($datos['datos']) && isset($datos['ficha'])) {
+            $code = $datos["datos"];
+            $ficha = $datos["ficha"];   
+
+            if (!$user) {
+                return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('error', 'El usuario no existe o no está activo.');
+            }
+
+            date_default_timezone_set('America/Bogota');
+
+            Asistencia::create([
+                'user_id' => (int)$code,
+                'date' => $date
+            ]);
+        
+            return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('success', 'Asistencia registrada con éxito.');
+        }
+    }else{
+        if (isset($datos['datos']) && isset($datos['ficha'])) {
+            $code = $datos["datos"];
+            $ficha = $datos["ficha"];   
+
+            if (!$user) {
+                return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('error', 'El usuario no existe o no está activo.');
+            }
+
+
+            $salida = Asistencia::where('user_id', $code)
+            ->where(DB::raw('DATE(date)'), $dateTime)
+            ->where('create_at_salida', null)
+            ->first();
+        
+            if ($salida) {
+                $salida->update([
+                    'create_at_salida' => $date
+                ]);
+
+            }
+
+            return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('success', 'Salida registrada con éxito.');
+
+        }
     }
 
-    $date = date('Y-m-d H:i:s');
-    Asistencia::create([
-        'user_id' => (int)$code,
-        'date' => $date
-    ]);
-
-    return redirect()->route('fichas.instructor.view', ['ficha' => $ficha])->with('success', 'Asistencia registrada con éxito.');
 }
 
 public function marcarasistencia ($code){
@@ -116,81 +229,5 @@ public function exportarAsistencias($code, Ficha $ficha)
 
     // Exporta los datos utilizando la clase AsistenciasExport
     return Excel::download(new AsistencesExport($asistencias), $nombreArchivo);
-
 }
-
-public function createAsistenceQr(Request $request)
-{
-    
-    date_default_timezone_set('America/Bogota');
-    $date = date('Y-m-d H:i:s');
-    $dateTime =  date('Y-m-d');
-
-    $datos = $request->all();
-    $code = $datos["datos"];
-    $ficha = $datos["ficha"];   
-
-    $user = User::where('code', $code)
-    ->where('status', 'active')
-    ->join('students_fichas', 'students_fichas.user_id', '=', 'users.code')
-    ->where('students_fichas.ficha_id', $ficha)
-    ->first(); 
-
-    $salida = Asistencia::where('user_id', $code)
-    ->where(DB::raw('DATE(date)'), $dateTime)
-    ->where('create_at_salida', null)
-    ->first();
-
-    $asistencia = Asistencia::where('user_id', $code)
-    ->where(DB::raw('DATE(date)'), $dateTime)
-    ->first();
-
-    if ($datos['capturar'] == 'ok' && (!$asistencia || !$salida)) {
-        if (isset($datos['datos']) && isset($datos['ficha'])) {
-            $code = $datos["datos"];
-            $ficha = $datos["ficha"];   
-
-            if (!$user) {
-                return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('error', 'El usuario no existe o no está activo.');
-            }
-
-            date_default_timezone_set('America/Bogota');
-
-            Asistencia::create([
-                'user_id' => (int)$code,
-                'date' => $date
-            ]);
-        
-            return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('success', 'Asistencia registrada con éxito.');
-        }
-    }else{
-        if (isset($datos['datos']) && isset($datos['ficha'])) {
-            $code = $datos["datos"];
-            $ficha = $datos["ficha"];   
-
-            if (!$user) {
-                return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('error', 'El usuario no existe o no está activo.');
-            }
-
-
-            $salida = Asistencia::where('user_id', $code)
-            ->where(DB::raw('DATE(date)'), $dateTime)
-            ->where('create_at_salida', null)
-            ->first();
-        
-            if ($salida) {
-                $salida->update([
-                    'create_at_salida' => $date
-                ]);
-
-            }
-
-            return redirect()->route('fichas.instructor.marcar', ['ficha' => $ficha])->with('success', 'Salida registrada con éxito.');
-
-        }
-    }
-
-}
-
-
 }
