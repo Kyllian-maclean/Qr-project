@@ -23,10 +23,6 @@
                             <a href="{{ route('fichas.instructor.view', $ficha->code) }}" class="btn btn-primary">Visualizar</a>
                         </td>
                     </tr>
-
-
-
-                    <p> sapa</p>
                 @endif
             @endforeach
         </tbody>

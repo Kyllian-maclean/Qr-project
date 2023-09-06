@@ -8,7 +8,7 @@
     </div>
 </div>
 
-<div class="btn-group">
+<div class="botones">
     <form action="{{ route('importar.usuarios') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="input-group mb-3 mt-3">
