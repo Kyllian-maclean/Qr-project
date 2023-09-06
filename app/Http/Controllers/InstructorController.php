@@ -133,7 +133,7 @@ public function createAsistenceQr(Request $request)
     ->first();
 
     if ($datos['capturar'] == 'ok' && (!$asistencia || !$salida)) {
-        dd($ficha);
+
         if (isset($datos['datos']) && isset($datos['ficha'])) {
             $code = $datos["datos"];
             $ficha = $datos["ficha"];   
