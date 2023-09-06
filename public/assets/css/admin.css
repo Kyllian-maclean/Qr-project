@@ -1,0 +1,438 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    margin:0;
+    padding-bottom: 4;
+    background: #f5efef;
+
+}
+
+/* Titulos */
+
+.titulos{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.titulos div{
+    /* background-color: rgba(233, 228, 228, 0.837); */
+    width: 90%;
+
+}
+
+.titulos h1{
+    text-align: center;
+    /* margin-top: 10px; */
+    color: black;
+    font-weight: bold   ;
+}
+
+.table{
+    width: 100%;
+}
+
+/* .input-group{
+  margin-top: ;
+} */
+
+.btn-group{
+  display: flex;
+  justify-content:center;
+  border: 2px solid black;
+  width: 70%;
+  align-items: center;
+  margin-top: 20px;
+
+}
+
+form{
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.custom-file-input{
+  margin-left:20px;
+}
+
+
+.content-table{
+    border: 1px solid black;
+    padding: 2px;
+    width: 95%;
+    border-radius: 8px;
+    height: 300px;
+    overflow-y: scroll;
+    display: flex;
+}
+
+/* footer */
+.footer{
+    display: flex;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*-------------------crear usuario--Editar usuario--------------------*/
+
+:root {
+    --dark: #5a5a5a;
+    --beige: rgb(179, 177, 177);
+    --gold: #39A900;
+    --brown: #8b6932;
+    --white: #ffffff;
+  }
+
+  /* :: Base :: */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+
+    position: relative;
+    min-height: 100vh;
+    margin:0;
+    padding-bottom: 4;
+    background: #f5efef;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--dark);
+
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .titulos-crear{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+
+  .titulos-crear h1{
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  input{
+    width: 100%;
+    height: 40px;
+  }
+
+  /* input,
+  [type=submit] {
+   all: unset;
+    width: 100%;
+  }
+
+  [type=submit] {
+    cursor: pointer;
+  }  */
+
+  /* :: Layout :: */
+  .container{
+    /* width: min(1030px, 90%); */
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 15px;
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  /* :: Modules :: */
+  .form-icon {
+    max-width: 90px;
+    margin-bottom: 28px;
+  }
+
+  .form-title {
+    font-size: 3rem;
+    margin: 0 auto 16px;
+    margin-top: 30px;
+  }
+
+  .form-subtitle {
+    font-size: 18px;
+    margin-block: 0;
+  }
+
+  .benefits {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  .benefits-item {
+    margin-bottom: 16px;
+  }
+
+  .benefits-icon {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+
+  .form-body {
+    background-color: var(--beige);
+    padding: 20px 15px;
+    border-radius: 8px;
+  }
+
+  .form-label {
+    margin-bottom: 12px;
+    display: block;
+    font-weight: bold;
+    color: black;
+  }
+
+  .edit{
+    margin-top: -120px;
+  }
+
+  .create{
+    margin-top: -90px;
+  }
+
+  .input-text {
+    background-color: var(--white);
+    box-sizing: border-box;
+    padding: 15px 12px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 2px solid transparent;
+  }
+
+  .input-text:focus-visible,
+  .input-text:focus {
+    border: 2px solid var(--brown);
+  }
+
+  .form-control{
+    height: 40px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 8px;
+    border: 2px  transparent;
+  }
+
+  .form-legend {
+    margin-bottom: 10px;
+  }
+
+  .form-footer > *:not(:last-child) {
+    margin-bottom: 2px;
+  }
+
+  .form-check {
+    font-size: 14px;
+  }
+
+  .form-submit {
+    background-color: var(--gold);
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    padding-block: 10px;
+    border-radius: 8px;
+  }
+
+  /* :: State :: */
+  .highlighted {
+    font-weight: 600;
+  }
+
+  .btn-crear{
+    margin-top: -14px;
+  }
+
+  .botones{
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+
+  }
+
+  /* :: Mediaqueries :: */
+  @media screen and (min-width: 700px) {
+    .form-body {
+      display: flex;
+      gap: 60px;
+      justify-content: space-between;
+      padding: 28px 30px;
+    }
+
+    .form-body > div {
+      width: 50%;
+    }
+
+    .benefits {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .benefits-item {
+      width: 33%;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+  /* :: checkbox styles :: */
+  [type=checkbox]:not(:checked),
+  [type=checkbox]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+  }
+
+  [type=checkbox]:not(:checked) + label,
+  [type=checkbox]:checked + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  [type=checkbox]:not(:checked) + label:before,
+  [type=checkbox]:checked + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background: var(--white);
+    border-radius: 50%;
+    transition: all 0.275s;
+  }
+
+  [type=checkbox]:checked + label:before {
+    background: var(--brown);
+  }
+
+  /* checked mark aspect */
+  [type=checkbox]:not(:checked) + label:after,
+  [type=checkbox]:checked + label:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    background: var(--gold);
+  }
+
+  /* checked mark aspect changes */
+  [type=checkbox]:not(:checked) + label:after {
+    opacity: 0;
+  }
+
+  [type=checkbox]:checked + label:after {
+    opacity: 1;
+  }
+
+
+  /* ------------Listar fichas--------- */
+
+  .titulos-fichas{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .titulos-fichas h1{
+    /* margin-top: 15px; */
+    color: black;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .btn-index{
+    margin: 5px 10px ;
+  }
+  .table{
+    width: 100%;
+  }
+
+  .content-table{
+    border: 1px solid black;
+    padding: 2px;
+    width: 80%;
+    border-radius: 5px;
+    height: 300px;
+    overflow-y: scroll;
+    display: flex;
+    
+}
+
+/* ------------------crear ficha------------ */
+
+.content{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  height: 150px;
+  background-color: #dedbdb;
+  margin: auto;
+  padding: 30px 0;
+  border-radius: 8px;
+  color: #0a0a0b;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  font-weight:bold;
+} 
+
+.label{
+  
+  margin-left: 10px ;
+}
+
+.form-control2{
+ 
+  width: 95%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 40px;
+  background-color: var(--white);
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 8px;
+  border: 2px  transparent;
+}
+
+.guardar{
+  margin-top: 40px;
+  margin-right: 5px;
+}
