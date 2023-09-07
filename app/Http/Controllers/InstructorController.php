@@ -28,13 +28,23 @@ class InstructorController extends Controller
 
 public function viewOneFicha($code)
 {
+
+    date_default_timezone_set('America/Bogota');
+    $date = date('Y-m-d H:i:s');
+    $dateTime =  date('Y-m-d');
+
     // Buscar la ficha por su código
     $ficha = Ficha::where('code', $code)->first();
 
+    $asistencias = Asistencia::with('user')
+    ->join('users', 'asistencias.user_id', '=', 'users.code')
+    ->select('asistencias.*', 'users.*')
+    ->get();
+    
     // Consulta para obtener usuarios con rol_id igual a 3
     $students = $ficha->students;
 
-    return view('fichas.instructor.view', compact('ficha', 'students'));
+    return view('fichas.instructor.view', compact('ficha', 'students', 'asistencias'));
 }
 public function createAsistence($code, $ficha)
 {
@@ -123,7 +133,7 @@ public function createAsistenceQr(Request $request)
     ->first();
 
     if ($datos['capturar'] == 'ok' && (!$asistencia || !$salida)) {
-        dd($ficha);
+
         if (isset($datos['datos']) && isset($datos['ficha'])) {
             $code = $datos["datos"];
             $ficha = $datos["ficha"];   
