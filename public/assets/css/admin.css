@@ -10,6 +10,7 @@ body{
     margin:0;
     padding-bottom: 4;
     background: #f5efef;
+    
 
 }
 
@@ -277,7 +278,7 @@ form{
     width: 80%;
     background-color: #ffffff;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 25px;
 
   }
 
@@ -429,10 +430,65 @@ form{
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   border-radius: 8px;
-  border: 2px  transparent;
+  border: 2px  transparent; 
 }
 
 .guardar{
   margin-top: 40px;
   margin-right: 5px;
 }
+
+/* --------editar ficha---------- */
+
+.content2{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  height: 150px;
+  background-color: #dedbdb;
+  margin: auto;
+  padding: 30px 0;
+  border-radius: 8px;
+  color: #0a0a0b;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  font-weight:bold;
+} 
+
+/* ----------- visualizar ficha------------- */
+
+.titulos-visualizar{
+ 
+    display: flex;
+    justify-content: center;
+}
+    
+.titulos-visualizar h1{
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.instructor h1{
+  color: black;
+  font-weight: bold;
+  
+
+}
+
+.content-table-visualizar{
+  border: 1px solid black;
+  padding: 2px;
+  width: 70%;
+  border-radius: 5px;
+  height: 200px;
+  overflow-y: scroll;
+  position: relative;
+  margin-left: 10px;
+  }
+
+  .aprendiz{
+    margin-bottom: 50px;
+  }
+  
+  
