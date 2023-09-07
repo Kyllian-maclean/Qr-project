@@ -4,7 +4,7 @@
 
 <div class="titulos">
     <div>
-        <h1>Listado de Usuario</h1>
+        <h1>Listado de Usuarios</h1>
     </div>
 </div>
 
@@ -13,13 +13,12 @@
         @csrf
         <div class="input-group mb-3 mt-3">
             <div class="input-group-append">
-                <a href="{{ route('users.create') }}" class="btn btn-success">Crear Usuario</a>
-                <a href="{{ route('exportar.usuarios') }}" class="btn btn-success">Exportar a Excel</a>
-                <button type="submit" class="btn btn-primary">Importar</button>
+                <a href="{{ route('users.create') }}" class="btn-index btn btn-success">Crear Usuario</a>
+                <a href="{{ route('exportar.usuarios') }}" class="btn-index btn btn-success">Exportar a Excel</a>
+                <button type="submit" class="btn-index btn btn-primary">Importar</button>
             </div>
-            <div class="custom-file">
-                
-                <input required type="file" class="custom-file-input" name="archivo" id="archivo">
+            <div class="custom-file">  
+                <input required type="file" class="btn-index custom-file-input" name="archivo" id="archivo">
                 <label class="custom-file-label" for="archivo">Seleccionar Archivo Excel</label>
             </div>
         </div>
