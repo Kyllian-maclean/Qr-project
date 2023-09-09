@@ -22,7 +22,7 @@
                     <button type="submit" class="guardar btn btn-primary">Vincular Instructor</button>
                 </div>
             </form>
-        </div>|
+        </div>
     </div>
 
 @endsection

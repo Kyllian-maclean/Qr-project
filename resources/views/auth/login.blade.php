@@ -46,7 +46,7 @@
 
                             <div class="input-field">
                                 <input id="password" type="password" class="input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                <label for="password" class="input">{{ __('Contraseña') }}</label>
+                                <label for="password">{{ __('Contraseña') }}</label>
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -56,14 +56,13 @@
                             </div>
 
                             <div >
-                            
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Recordar') }}
-                                        </label>
-                                    </div>
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Recordar') }}
+                                    </label>
+                                </div>
                                 
                             </div>
 

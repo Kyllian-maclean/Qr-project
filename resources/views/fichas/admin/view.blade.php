@@ -54,7 +54,7 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
+                            <th>DNI</th>
                             <th>Nombre</th>
                             <th>Estado</th>
                             <th class="acciones">Acciones</th>
@@ -96,7 +96,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Codigo</th>
+                        <th>DNI</th>
                         <th>Nombre</th>
                         <th>Estado</th>
                         <th>Acciones</th>

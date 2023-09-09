@@ -15,7 +15,7 @@
                 <table id="myTable" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Codigo Aprendiz</th>
+                            <th>Dni Aprendiz</th>
                             <th>Aprendiz</th>
                             <th>Estado</th>
                             <th>Fecha</th>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container mt-4">
+<div class="container mt-3">
   <div class="titulos">
       <div>
           <h1>Perfil de usuario</h1>
@@ -75,7 +75,7 @@
 
           </div>   
       </form>
-      <div class="mt-4">
+      <div class="">
         <form action="{{ route('updatesPassword') }}" method="POST">
 
           <div class="cambio-contra">
