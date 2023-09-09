@@ -10,11 +10,65 @@ body{
     margin:0;
     padding-bottom: 4;
     background: #f5efef;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--dark);
     
 }
+ 
 
 .navbar{
-  background-color: rgb(225, 226, 227);
+  background-color: #ebebe6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.navbar a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo{
+  margin-right: 50px;
+}
+
+.list{
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#toggler,
+.navbar label{
+  display: none;
+}
+
+@media screen and 
+(max-width: 600px){
+  .menu{
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .list{
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .navbar label{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #toggler:checked~ .menu{
+    max-height: 100%;
+    
+  }
 }
 
 /* Titulos */
@@ -46,7 +100,9 @@ body{
 /* .input-group{
   margin-top: ;
 } */
-
+ /* .btn{
+  background: var(--green)!important;
+ } */
 .btn-group{
   display: flex;
   justify-content:center;
@@ -94,7 +150,7 @@ form{
 :root {
     --dark: #5a5a5a;
     --beige: rgb(203, 199, 199);
-    --gold: #39A900;
+    --green: #39A900;
     --brown: #8b6932;
     --white: #ffffff;
     --primary-color: #0E4BF1;
@@ -109,24 +165,6 @@ form{
     --title-icon-color: #fff;
   }
 
-  /* :: Base :: */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-
-    position: relative;
-    min-height: 100vh;
-    margin:0;
-    padding-bottom: 4;
-    background: #f5efef;
-    font-family: 'Kumbh Sans', sans-serif;
-    color: var(--dark);
-
-  }
 
   a {
     color: inherit;
@@ -516,7 +554,7 @@ form{
   }
 
   th{
-    background-color: #157347 !important;
+    background-color: var(--green) !important;
     color: #dedbdb !important;
   }
 
@@ -535,7 +573,7 @@ form{
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #157347;
+  background: var(--green);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
@@ -743,6 +781,9 @@ input[type="file"]::file-selector-button:active {
   align-items: center;
   justify-content: center;
   gap: 100px;
+  background:var(--beige);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 8px;
 }
 
 .cambiar{

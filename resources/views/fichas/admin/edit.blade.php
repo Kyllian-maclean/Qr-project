@@ -15,7 +15,7 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="code">Codigo:</label>
+                <label for="code">Ficha:</label>
                 <input type="number" name="code" id="code" class="form-control2 mt-3" value="{{ $ficha->code }}" required>
             </div>
 

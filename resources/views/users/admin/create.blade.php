@@ -24,7 +24,7 @@
                 </div>
 
                 <div>
-                    <label class="form-label" for="first_name">Nombres</label>
+                    <label class="form-label" for="first_name">Nombres</la  bel>
                     <input type="text" name="first_name" id="first_name" class="input-text" step="0.01" required>
                 </div>
 

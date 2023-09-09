@@ -30,7 +30,7 @@
                 <table id="myTable" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>DNI</th>
                             <th>Nombre</th>
                             <th>Correo</th>
                             <th>Estado</th>

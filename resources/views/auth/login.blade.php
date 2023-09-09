@@ -57,6 +57,16 @@
                                     @enderror
                             </div>
 
+
+                            <div >
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Recordar') }}
+                                    </label>
+                                </div>
+
                             <div class="form-check">
                             <input id="inpLock" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="btn-lock" for="inpLock">
@@ -70,6 +80,7 @@
                                     </svg>
                                 </label>
                                 <label for="">Recordarme</label>
+ main
                                 
                             </div>
 
