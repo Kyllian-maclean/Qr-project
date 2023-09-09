@@ -69,8 +69,10 @@ class AprendizController extends Controller
 
     public function excusasStore(Request $request)
     {
+
+        $dato = $request->all();
         try {
-            if ($request->hasFile('file')) {
+            if (isset($dato['file'])) {
 
                 //validar instructor
                 $rolInstructor = UserRol::select('user_rols.rol_id')
@@ -110,6 +112,35 @@ class AprendizController extends Controller
                 }else{
                     return redirect()->route('excusas.create.index')->with('error', 'El instructor no existe.');
                 }
+
+            }
+            else{
+
+                //validar instructor
+                $rolInstructor = UserRol::select('user_rols.rol_id')
+                ->where('rol_id', 2)
+                ->where('user_id', $request->input('instructor_id'))
+                ->first();
+
+                if($rolInstructor){
+                    
+                    //aprendiz
+                    $aprendiz = auth()->user();
+                    // Guardar los datos de la excusa en la base de datos
+                    $excusa = new Excusa();
+                    $excusa->aprendiz_id = $aprendiz->code;
+                    $excusa->instructor_id = $request->input('instructor_id');
+                    $excusa->date = $request->input('date');
+                    $excusa->file_path = 'N/A';
+                    $excusa->motivo = $request->input('motivo');
+                    $excusa->save();
+
+                    return redirect()->route('excusas.create.index')->with('success', 'Excusa guardada exitosamente.');
+                }else{
+                    return redirect()->route('excusas.create.index')->with('error', 'El instructor no existe.');
+                }
+
+
 
             }
 

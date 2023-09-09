@@ -57,22 +57,22 @@
     <table id="myTable" class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Codigo Aprendiz</th>
+                    <th>DNI</th>
+                    <th>Nombre</th>
                     <th>Entrada</th>
                     <th>Salida</th>
 
                 </tr>
             </thead>
             <tbody>
-                @foreach ($asistences as $asist)
-                
-                    <tr>
-                        <td>{{ $asist->user_id }}</td>
-                        <td>{{ $asist->date }}</td>
-                        <td>{{ $asist->create_at_salida }}</td>
-                    </tr>
-                
-                @endforeach
+            @foreach ($asistences as $asistencia)
+                        <tr>
+                            <td>{{ $asistencia->user_id}}</td>
+                            <td>{{ $asistencia->first_name}} {{ $asistencia->last_name}}</td>
+                            <td>{{ $asistencia->date}}</td>
+                            <td>{{ $asistencia->create_at_salida }}</td>
+                        </tr>
+                    @endforeach
             </tbody>
     </table>
 

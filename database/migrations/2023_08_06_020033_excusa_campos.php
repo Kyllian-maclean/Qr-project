@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('aprendiz_id')->references('code')->on('users');
             $table->integer('instructor_id');
             $table->foreign('instructor_id')->references('code')->on('users');
-            $table->dateTime('date');
+            $table->date('date');
             $table->string('motivo');
             $table->enum('estado', ['Aprobado', 'Rechazado', 'Pendiente'])->default('pendiente');
             $table->string('file_path')->nullable()->default(null); // Campo para guardar la ruta del archivo
