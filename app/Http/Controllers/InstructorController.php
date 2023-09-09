@@ -36,9 +36,14 @@ public function viewOneFicha($code)
     // Buscar la ficha por su código
     $ficha = Ficha::where('code', $code)->first();
 
+
+
     $asistencias = Asistencia::with('user')
+    ->whereDate('date', $dateTime)
+    ->where('students_fichas.ficha_id', $code)
     ->join('users', 'asistencias.user_id', '=', 'users.code')
-    ->select('asistencias.*', 'users.*')
+    ->join('students_fichas', 'asistencias.user_id', '=', 'students_fichas.user_id')
+    ->select('asistencias.*', 'users.*', 'students_fichas.*')
     ->get();
     
     // Consulta para obtener usuarios con rol_id igual a 3
