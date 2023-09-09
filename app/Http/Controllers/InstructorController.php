@@ -197,6 +197,8 @@ public function viewAsistences($code,Ficha $ficha)
     $itemsPerPage = 10;
     $asistences = Asistencia::select('asistencias.*')
     ->where('user_id', $code)
+    ->join('users', 'asistencias.user_id', '=', 'users.code')
+    ->select('asistencias.*', 'users.*')
     ->paginate($itemsPerPage);
     $user = User::where('code', $code)->first();
 

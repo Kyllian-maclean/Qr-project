@@ -15,7 +15,7 @@
                 <table id="myTable" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Codigo Aprendiz</th>
+                            <th>DNI</th>
                             <th>Aprendiz</th>
                             <th>Estado</th>
                             <th>Fecha</th>
@@ -29,7 +29,7 @@
                 
                     <tr>
                         <td>{{ $excusa->aprendiz_id }}</td>
-                        <td>{{ $excusa->first_name }} - {{ $excusa->last_name }} - {{$excusa->code}}</td>
+                        <td>{{ $excusa->first_name }} {{ $excusa->last_name }} </td>
                         <td>
                             {{ $excusa->estado }}
                         </td>
@@ -40,33 +40,39 @@
                             </div>
                         </td>
                         <td>
-                            <a href="{{ route('descargar.pdf', ['nombreArchivo' => $excusa->file_path]) }}" class="btn btn-primary">Descargar PDF</a>
+                            <p>{{ $excusa->file_path }}</p>
+                            <a href="{{ route('descargar.pdf', ['nombreArchivo' => $excusa->file_path]) }}" class="btn btn-sm btn-primary"><i class="fa-solid fa-download"></i></a>
                         </td>
                         <td>
-                            @if($excusa->estado == 'Pendiente')
-                        
-                            <form  style="display: inline;" action="{{ route('fichas.instructor.aprobar', ['excusa' => $excusa]) }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Aprobar</button>
-                            </form>
-
-                            <form  style="display: inline;" action="{{ route('fichas.instructor.rechazar', ['excusa' => $excusa]) }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Rechazar</button>
-                            </form>
+                            <div class="btn-group">
+                                @if($excusa->estado == 'Pendiente')
                             
-                            @elseif($excusa->estado == 'Aprobado')
-                            <form  style="display: inline;" action="{{ route('fichas.instructor.rechazar', ['excusa' => $excusa]) }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Rechazar</button>
-                            </form>
+                                <form  style="display: inline;" action="{{ route('fichas.instructor.aprobar', ['excusa' => $excusa]) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                                </form>
 
-                            @else
-                            <form  style="display: inline;" action="{{ route('fichas.instructor.aprobar', ['excusa' => $excusa]) }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Aprobar</button>
-                            </form>
-                            @endif
+                                <form  style="display: inline;" action="{{ route('fichas.instructor.rechazar', ['excusa' => $excusa]) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-xmark"></i></button>
+                                </form>
+                            </div>
+                            
+                            <div class="btn-group">
+                                @elseif($excusa->estado == 'Aprobado')
+                                <form  style="display: inline;" action="{{ route('fichas.instructor.rechazar', ['excusa' => $excusa]) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-xmark"></i></button>
+                                </form>
+
+                                @else
+                                <form  style="display: inline;" action="{{ route('fichas.instructor.aprobar', ['excusa' => $excusa]) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-check"></i></button>
+                                </form>
+                                @endif
+                            </div>
+                            
                         </td>
                     
                     </tr>
