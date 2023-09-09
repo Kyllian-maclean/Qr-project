@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    margin:0;
+    padding-bottom: 4;
+    background: #f5efef;
+
+}
+
+.navbar{
+    background-color: rgb(225, 226, 227);
+    
+}
+
+.titulos{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.titulos h1{
+    text-align: center;
+    /* margin-top: 10px; */
+    color: black;
+    font-weight: bold   ;
+}
+
+/* --------------Tabla-------------- */
+  /* === Custom Scroll Bar CSS === */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #157347;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0b3cc1;
+  }
+
+  th{
+    
+    background-color: #157347 !important;
+    color: #dedbdb !important;
+  }

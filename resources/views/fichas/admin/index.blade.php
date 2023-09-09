@@ -18,8 +18,8 @@
             </div>
             <div class="custom-file">
                 
-                <input required type="file" class=" btn-index custom-file-input" name="archivo" id="archivo">
-                <label class="custom-file-label" for="archivo">Seleccionar Archivo Excel</label>
+                <input required type="file" name="archivo" id="archivo">
+    
             </div>
         </div>
     </form>
@@ -29,11 +29,11 @@
 
     <div class="container2">
         <div class="row justify-content-center">
-            <div class="content-table mt-5">
-                <table class="table table-striped table-hover">
+            <div class="table-responsive-xl mt-5">
+                <table id="myTable" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
+                            <th>Ficha</th>
                             <th>Nombre</th>
                             <th>Estado</th>
                             <th>Acciones</th>
@@ -72,22 +72,7 @@
             </div>
         </div>
     </div>
-
     
-        
-
-    <div class="pagination-results">
-        Mostrando {{ $fichas->firstItem() }} a {{ $fichas->lastItem() }} de {{ $fichas->total() }} resultados.
-        <br>
-        @if ($fichas->previousPageUrl())
-            <a href="{{ $fichas->previousPageUrl() }}">Anterior</a>
-        @endif
-    
-        @if ($fichas->nextPageUrl())
-            <a href="{{ $fichas->nextPageUrl() }}">Siguiente</a>
-        @endif
-    </div>
-
     @if(session('error'))
     <script>
         Swal.fire({

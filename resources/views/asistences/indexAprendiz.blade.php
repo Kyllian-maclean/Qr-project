@@ -2,11 +2,13 @@
 @extends('index_aprendiz')
 
 @section('content')
-    <br>
-    <h1>Asistencias del aprendiz</h1>
-    <br>
-
-    <table class="table mt-3">
+<div class="titulos">
+    <div>
+        <h1>Asistencia del Aprendiz</h1>
+    </div>
+</div>
+<div class="table-responsive-xl mt-3">
+    <table id="myTable" class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>Codigo Aprendiz</th>
@@ -25,20 +27,8 @@
             @endforeach
         </tbody>
     </table>
-
-    <div class="pagination-results">
-        Mostrando {{ $asistences->firstItem() }} a {{ $asistences->lastItem() }} de {{ $asistences->total() }} resultados.
-        <br>
-        @if ($asistences->previousPageUrl())
-            <a href="{{ $asistences->previousPageUrl() }}">Anterior</a>
-        @endif
+</div>
     
-        @if ($asistences->nextPageUrl())
-            <a href="{{ $asistences->nextPageUrl() }}">Siguiente</a>
-        @endif
-    </div>
-    <br>
-    <br>
 
 
     @if(session('error'))

@@ -19,16 +19,15 @@
             </div>
             <div class="custom-file">  
                 <input required type="file" class="btn-index custom-file-input" name="archivo" id="archivo">
-                <label class="custom-file-label" for="archivo">Seleccionar Archivo Excel</label>
             </div>
         </div>
     </form>
 </div>
     
-    <div>
+    <div class="container2">
         <div class="row justify-content-center">
-            <div class="content-table mt-5">
-                <table class="table table-striped table-hover">
+            <div class="table-responsive-xl mt-5">
+                <table id="myTable" class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -72,17 +71,7 @@
         </div>
     </div>
 
-    <div class="pagination-results">
-        Mostrando {{ $users->firstItem() }} a {{ $users->lastItem() }} de {{ $users->total() }} resultados.
-        <br>
-        @if ($users->previousPageUrl())
-            <a href="{{ $users->previousPageUrl() }}">Anterior</a>
-        @endif
     
-        @if ($users->nextPageUrl())
-            <a href="{{ $users->nextPageUrl() }}">Siguiente</a>
-        @endif
-    </div>
 
     @if(session('error'))
     <script>

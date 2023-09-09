@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;  
 }
 
 body{
@@ -11,7 +11,10 @@ body{
     padding-bottom: 4;
     background: #f5efef;
     
+}
 
+.navbar{
+  background-color: rgb(225, 226, 227);
 }
 
 /* Titulos */
@@ -68,13 +71,13 @@ form{
 
 
 .content-table{
-    border: 1px solid black;
     padding: 2px;
     width: 95%;
     border-radius: 8px;
     height: 300px;
     overflow-y: scroll;
     display: flex;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 /* footer */
@@ -90,10 +93,20 @@ form{
 
 :root {
     --dark: #5a5a5a;
-    --beige: rgb(179, 177, 177);
+    --beige: rgb(203, 199, 199);
     --gold: #39A900;
     --brown: #8b6932;
     --white: #ffffff;
+    --primary-color: #0E4BF1;
+    --panel-color: #FFF;
+    --text-color: #000;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #4DA3FF;
+    --box2-color: rgb(195, 230, 203);
+    --box3-color: rgb(255,238,186);
+    --title-icon-color: #fff;
   }
 
   /* :: Base :: */
@@ -223,6 +236,7 @@ form{
     border-radius: 8px;
     margin-bottom: 30px;
     border: 2px solid transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   }
 
   .input-text:focus-visible,
@@ -237,6 +251,7 @@ form{
     font-family: "Montserrat", sans-serif;
     border-radius: 8px;
     border: 2px  transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   }
 
   .form-legend {
@@ -279,6 +294,7 @@ form{
     background-color: #ffffff;
     border-radius: 8px;
     margin-top: 25px;
+    min-height: 120px;
 
   }
 
@@ -388,16 +404,15 @@ form{
     width: 100%;
   }
 
-  .content-table{
-    border: 1px solid black;
+  /* .content-table{
     padding: 2px;
     width: 80%;
     border-radius: 5px;
     height: 300px;
     overflow-y: scroll;
-    display: flex;
+    display: flex; 
     
-}
+}*/
 
 /* ------------------crear ficha------------ */
 
@@ -423,16 +438,19 @@ form{
 
 .form-control2{
  
-  width: 95%;
+  width: 98%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   height: 40px;
   background-color: var(--white);
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
   border-radius: 8px;
   border: 2px  transparent; 
+  padding: 3px;
 }
 
+.form-group{
+  margin-right: 8px;
+}
 .guardar{
   margin-top: 40px;
   margin-right: 5px;
@@ -458,7 +476,6 @@ form{
 /* ----------- visualizar ficha------------- */
 
 .titulos-visualizar{
- 
     display: flex;
     justify-content: center;
 }
@@ -472,23 +489,289 @@ form{
 .instructor h1{
   color: black;
   font-weight: bold;
-  
+  display: flex;
+    justify-content: center;
+}
 
+.visualizar{
+  margin-bottom: 20px;
 }
 
 .content-table-visualizar{
-  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   padding: 2px;
-  width: 70%;
+  width: 100%;
   border-radius: 5px;
   height: 200px;
   overflow-y: scroll;
   position: relative;
   margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  
   }
 
   .aprendiz{
     margin-bottom: 50px;
   }
+
+  th{
+    background-color: #157347 !important;
+    color: #dedbdb !important;
+  }
+
   
-  
+
+/* -----------------Principal---------------------- */
+
+
+
+
+/* === Custom Scroll Bar CSS === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #157347;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0b3cc1;
+}
+
+.info-biometric{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.info-parrafo{
+  width: 900px;
+}
+
+.top .search-box i{
+  position: absolute;
+  left: 15px;
+  font-size: 22px;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--black-light-color);
+}
+.top img{
+  width: 40px;
+  border-radius: 50%;
+}
+.dashboard .dash-content{
+  padding-top: 50px;
+}
+.dash-content .title{
+  display: flex;
+  align-items: center;
+  margin: 60px 0 30px 0;
+}
+.dash-content .title i{
+  position: relative;
+  height: 35px;
+  width: 35px;
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  color: var(--title-icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.dash-content .title .text{
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-left: 10px;
+}
+.dash-content .boxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.dash-content .boxes .box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  width: calc(100% / 3 - 15px);
+  padding: 15px 20px;
+  background-color: var(--box1-color);
+  transition: var(--tran-05);
+}
+.boxes .box i{
+  font-size: 35px;
+  color: var(--text-color);
+}
+.boxes .box .text{
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.boxes .box .number{
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.boxes .box.box2{
+  background-color: var(--box2-color);
+}
+.boxes .box.box3{
+  background-color: var(--box3-color);
+}
+.dash-content .activity .activity-data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.activity .activity-data{
+  display: flex;
+}
+.activity-data .data{
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px;
+}
+.activity-data .data-title{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.activity-data .data .data-list{
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+  white-space: nowrap;
+  color: var(--text-color);
+}
+
+.active{
+  color: var(--primary-color) !important;
+}
+
+input[type="file"] {
+  outline: none;
+  padding: 4px;
+  margin: -4px;
+}
+
+input[type="file"]:focus-within::file-selector-button,
+input[type="file"]:focus::file-selector-button {
+  outline: 2px solid #0964b0;
+  outline-offset: 2px;
+}
+
+input[type="file"]::before {
+  top: 16px;
+}
+
+input[type="file"]::after {
+  top: 14px;
+}
+
+/* ------- From Step 2 ------- */
+
+input[type="file"] {
+  position: relative;
+}
+
+input[type="file"]::file-selector-button {
+  width: 136px;
+  color: transparent;
+}
+
+/* Faked label styles and icon */
+input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+  /*   top: 11px; */
+  left: 40px;
+  color: #0964b0;
+  content: "Upload File";
+}
+
+input[type="file"]::after {
+  position: absolute;
+  pointer-events: none;
+  /*   top: 10px; */
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+}
+
+/* ------- From Step 1 ------- */
+
+/* file upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+}
+
+.contenedor-columnas{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.cambiar{
+  margin-top: 5px;
+}
+
+@media (max-width: 780px) {
+  .dash-content .boxes .box{
+      width: calc(100% / 2 - 15px);
+      margin-top: 15px;
+  }
+
+  .info-biometric{
+    display:block;
+  }
+
+  .contenedor-columnas{
+    display:block;
+  }
+
+  .info-parrafo{
+    width: auto;
+  }
+
+}
+@media (max-width: 560px) {
+  .dash-content .boxes .box{
+      width: 100% ;
+  }
+}
+
+/* -------------Contacto----------------- */

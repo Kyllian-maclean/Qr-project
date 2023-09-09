@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    margin:0;
+    padding-bottom: 4;
+    background: #f5efef;
+
+}
+
+.navbar{
+    background-color: rgb(225, 226, 227);
+    
+}
+
+
+.titulos{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+
+
+.titulos h1{
+    text-align: center;
+    /* margin-top: 10px; */
+    color: black;
+    font-weight: bold   ;
+}
+
+
+.content{
+overflow-y: scroll;
+/* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+
+}
+
+.container3{
+    margin-bottom: 50px;
+    
+}
+
+.form-control{
+    
+    height: 40px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px  transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  /* --------------Tabla-------------- */
+  /* === Custom Scroll Bar CSS === */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #157347;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0b3cc1;
+  }
+
+  th{
+    
+    background-color: #157347 !important;
+    color: #dedbdb !important;
+  }
+
+  /* ------visualizar ficha-------- */
+
+  form{
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .visualizar{
+    margin-bottom: 20px;
+  }
+
+  /* .form-control2{
+ 
+    width: 98%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    height: 40px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px  transparent; 
+    padding: 5px;
+  } */
+
+  .form-group{
+    margin-right: 15px;
+  }
+
+  .content-table-visualizar{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 2px;
+    width: 100%;
+    border-radius: 5px;
+    height: 300px;
+    overflow-y: scroll;
+    position: relative;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    
+    }
+
+    .form-control3{
+ 
+      width: 50%;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      height: 40px;
+      background-color: var(--white);
+      box-sizing: border-box;
+      border-radius: 8px;
+      border: 2px  transparent; 
+      padding: 5px;
+      margin-bottom: 30px;
+    }
+
+    .qr{
+      display: flex;
+      
+      width: 45%;
+    }
+
+

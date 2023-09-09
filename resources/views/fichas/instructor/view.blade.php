@@ -2,13 +2,17 @@
 
 @section('content')
     <a href="{{ route('fichas.instructor.index') }}" id="btnBack" class="btn btn-primary">Retroceder</a>
-    <br>
-    <br>
+    
 
-    <h1>Ficha</h1>
-    <br>
+<div class="titulos">
+    <div>
+        <h1>Ficha</h1>
+    </div>
+</div>
 
-    <form action="{{ route('fichas.update', ['ficha' => $ficha]) }}" method="POST">
+
+
+    <form class="visualizar" action="{{ route('fichas.update', ['ficha' => $ficha]) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -33,59 +37,85 @@
     </form>
     <br>
     <br>
-    <h1>Aprendices</h1>
+    <div class="titulos">
+    <div>
+        <h1>Aprendices</h1>
+    </div>
+</div>
     <a href="{{ route('fichas.instructor.marcar', $ficha->code) }}" class="btn btn-primary">QR</a>
-    <table class="table mt-3">
-        <thead>
-            <tr>
-                <th>Codigo</th>
-                <th>Nombre</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($students as $student)
-                    <tr>
-                        <td>{{ $student->code }}</td>
-                        <td>{{ $student->first_name }} {{$student->last_name}}</td>
-                        <td>{{ $student->status }}</td>
-                        <td>
-                            <a  class="btn btn-primary" href="{{ route('fichas.instructor.asistences', ['user' => $student->code,'ficha' => $ficha]) }}">Ver asistencias</a>
-                            <form  style="display: inline;" action="{{ route('fichas.instructor.asistence', ['user' => $student->code,'ficha' => $ficha->code]) }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Marcar Asistencia</button>
-                            </form>
-                        </td>
-                    </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-    <h1>Asistencias</h1>
+    
+    <div class="container2">
+        <div class="row justify-content-center">
+            <div class="content-table-visualizar mt-3">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($students as $student)
+                                <tr>
+                                    <td>{{ $student->code }}</td>
+                                    <td>{{ $student->first_name }} {{$student->last_name}}</td>
+                                    <td>{{ $student->status }}</td>
+                                    <td>
+                                        <a  class="btn btn-primary" href="{{ route('fichas.instructor.asistences', ['user' => $student->code,'ficha' => $ficha]) }}">Ver asistencias</a>
+                                        <form  style="display: inline;" action="{{ route('fichas.instructor.asistence', ['user' => $student->code,'ficha' => $ficha->code]) }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Marcar Asistencia</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
     <br>
-    <table class="table mt-3">
-        <thead>
-            <tr>
-                <th>User_ID</th>
-                <th>Nombre</th>
-                <th>Entrada</th>
-                <th>Salida</th>
-            </tr>
-        </thead>
 
-        <tbody>
-        @foreach ($asistencias as $asistencia)
-            <tr>
-                <td>{{ $asistencia->user_id}}</td>
-                <td>{{ $asistencia->first_name}} {{ $asistencia->last_name}}</td>
-                <td>{{ $asistencia->date}}</td>
-                <td>{{ $asistencia->create_at_salida }}</td>
-            </tr>
-        @endforeach
-            
-        </tbody>
-    </table>
+
+<div class="titulos">
+    <div>
+        <h1>Asistencias</h1>
+    </div>
+</div>
+
+    <div class="container2">
+        <div class="row justify-content-center">
+            <div class="table-responsive-xl mt-5">
+                <table id="myTable" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>User_ID</th>
+                            <th>Nombre</th>
+                            <th>Entrada</th>
+                            <th>Salida</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    @foreach ($asistencias as $asistencia)
+                        <tr>
+                            <td>{{ $asistencia->user_id}}</td>
+                            <td>{{ $asistencia->first_name}} {{ $asistencia->last_name}}</td>
+                            <td>{{ $asistencia->date}}</td>
+                            <td>{{ $asistencia->create_at_salida }}</td>
+                        </tr>
+                    @endforeach
+                        
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+    
 
     @if(session('error'))
     <script>
