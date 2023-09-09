@@ -5,10 +5,12 @@
 
     <a href="{{ route('fichas.instructor.view', ['ficha' => $ficha]) }}" id="btnBack" class="btn btn-primary">Retroceder</a>
 
-    <br>
-    <br>
-
-    <h1>Aprendiz</h1>
+<div class="titulos">
+    <div>
+        <h1>Aprendiz</h1>
+    </div>
+</div>
+<br>
 
     <form >
         @csrf
@@ -43,46 +45,41 @@
         
     </form>
     <br>
-    <h1>Asistencias del aprendiz</h1>
+    <div class="titulos">
+    <div>
+        <h1>Asistencia del Aprendiz</h1>
+    </div>
+</div>
     <a href="{{ route('exportar.asistencias', ['code' => $user->code, 'ficha' => $ficha]) }}" class="btn btn-success">Exportar a Excel</a>
 
     <br>
-
-    <table class="table mt-3">
-        <thead>
-            <tr>
-                <th>Codigo Aprendiz</th>
-                <th>Entrada</th>
-                <th>Salida</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($asistences as $asist)
-               
+<div class="table-responsive-xl mt-3">
+    <table id="myTable" class="table table-striped table-hover">
+            <thead>
                 <tr>
-                    <td>{{ $asist->user_id }}</td>
-                    <td>{{ $asist->date }}</td>
-                    <td>{{ $asist->create_at_salida }}</td>
+                    <th>Codigo Aprendiz</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+
                 </tr>
-            
-            @endforeach
-        </tbody>
+            </thead>
+            <tbody>
+                @foreach ($asistences as $asist)
+                
+                    <tr>
+                        <td>{{ $asist->user_id }}</td>
+                        <td>{{ $asist->date }}</td>
+                        <td>{{ $asist->create_at_salida }}</td>
+                    </tr>
+                
+                @endforeach
+            </tbody>
     </table>
 
-    <div class="pagination-results">
-        Mostrando {{ $asistences->firstItem() }} a {{ $asistences->lastItem() }} de {{ $asistences->total() }} resultados.
-        <br>
-        @if ($asistences->previousPageUrl())
-            <a href="{{ $asistences->previousPageUrl() }}">Anterior</a>
-        @endif
+</div>
     
-        @if ($asistences->nextPageUrl())
-            <a href="{{ $asistences->nextPageUrl() }}">Siguiente</a>
-        @endif
-    </div>
     <br>
-    <br>
+    
 
 
     @if(session('error'))

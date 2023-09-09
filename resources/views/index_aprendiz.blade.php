@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"> <!--nuevo -->
+    <link rel="stylesheet" href="{{url('assets/css/aprendiz.css')}}">
 
-    <title>Biometric</title>
+    <title>Qr-Services</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="{{ route('users.aprendiz.QrCode') }}">Biometric</a>
+  <nav class="navbar navbar-expand-sm py-2">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ route('users.aprendiz.QrCode') }}"><img src="{{ url('assets/imgs/logosena.png') }}" width="45"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,4 +45,16 @@
 </div>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          $('table.display').DataTable();
+      });
+
+      $(document).ready(function () {
+          $('#myTable').DataTable();
+      });
+    </script>
 </html>
