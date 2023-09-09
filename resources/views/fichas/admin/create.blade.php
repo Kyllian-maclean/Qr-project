@@ -16,7 +16,7 @@
 
             
             <div class="form-group">
-                <label for="code">Codigo</label>
+                <label for="code">Numero de ficha</label>
                 <input type="number" name="code" id="code" class="form-control2 mt-3" required>
             </div>
 

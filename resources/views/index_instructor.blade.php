@@ -12,14 +12,15 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
-    <title>Biometric</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"> <!--nuevo -->
+    <link rel="stylesheet" href="{{url('assets/css/inst.css')}}">
+    <title>Qr-services</title>
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-2">
-    <div class="container">
-      <a class="navbar-brand" href="#">Biometric</a>
+  <nav class="navbar navbar-expand-sm py-2 ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="{{ url('assets/imgs/logosena.png') }}" width="45"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,4 +51,16 @@
   @notifyJs
   @include('notify::components.notify')
 </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          $('table.display').DataTable();
+      });
+
+      $(document).ready(function () {
+          $('#myTable').DataTable();
+      });
+    </script>
 </html>

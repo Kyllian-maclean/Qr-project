@@ -3,19 +3,26 @@
 
 @section('content')
 
-    <form  action="{{ route('fichas.instructor.asistenceQr') }}" method="POST">
+<div class="titulos">
+    <div>
+        <h1>Marcar asistencia</h1>
+    </div>
+</div>
+
+<form  action="{{ route('fichas.instructor.asistenceQr') }}" method="POST">
         @csrf
+
         <input readonly hidden type="text" placeholder="" value="{{ $ficha->code }}"  name="ficha">
-        <input type="text" placeholder="Escanar el QR" id='datos'  name="datos" autofocus>
+        <input class="form-control3"type="text" placeholder="Escanar el QR" id='datos'  name="datos" autofocus>
         <button type="submit" value="ok" name="capturar" id="ejecutar" class="btn btn-primary">Enviar</button>
     </form>
 
 
     
-    <div class="container">
+    <div class="qr">
         <div class="left">
             <div class="col-mb-6">
-                <video id="preview" width="40%"></video>
+                <video id="preview"></video>
             </div>
         </div>
     </div>
