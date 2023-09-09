@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('date');
             $table->string('motivo');
             $table->enum('estado', ['Aprobado', 'Rechazado', 'Pendiente'])->default('pendiente');
-            $table->string('file_path')->nullable(); // Campo para guardar la ruta del archivo
+            $table->string('file_path')->nullable()->default(null); // Campo para guardar la ruta del archivo
             $table->timestamps();
         });
     }
