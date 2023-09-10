@@ -17,7 +17,7 @@
           <div class="info-usuario">
 
               <div class="form-group">
-                  <label for="code">Codigo:</label>
+                  <label for="code">DNI:</label>
                   <input disabled type="number" name="code" id="code" class="form-control" value="{{ $user->code }}" required>
               </div>
 
@@ -75,7 +75,8 @@
 
           </div>   
       </form>
-      <div class="">
+      
+      <div>
         <form action="{{ route('updatesPassword') }}" method="POST">
 
           <div class="cambio-contra">

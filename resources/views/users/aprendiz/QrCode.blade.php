@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Perfil de Usuario</h1>
+    <!-- <h1>Perfil de Usuario</h1>
     <br>
     <form action="{{ route('users.update', ['user' => $user] ,['userRoleIds'=>$userRoleIds]) }}" method="POST">
         @csrf
@@ -43,7 +43,7 @@
         
       </form>
 
-    </div>
+    </div> -->
 </div>
 
 @if(session('error'))

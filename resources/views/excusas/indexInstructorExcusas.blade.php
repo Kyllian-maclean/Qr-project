@@ -16,7 +16,6 @@
                     <thead>
                         <tr>
                             <th>Dni Aprendiz</th>
-                            <th>DNI</th>
                             <th>Aprendiz</th>
                             <th>Estado</th>
                             <th>Fecha</th>
