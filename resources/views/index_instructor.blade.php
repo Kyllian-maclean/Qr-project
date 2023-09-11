@@ -18,14 +18,16 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm py-2 ">
+<nav class="navbar navbar-expand-sm py-2">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="{{ url('assets/imgs/logosena.png') }}" width="45"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#"><img class="logo" src="{{ url('assets/imgs/logosena.png') }}" width="45"></a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+      </button> -->
+      <input type="checkbox" id="toggler">
+      <Label for="toggler"><i class="navbar-toggler-icon"></i></Label>
+      <div class="menu navbar-collapse" id="navbarNav">
+        <ul class="list navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="{{ route('fichas.instructor.index') }}">Fichas</a>
           </li>
@@ -60,5 +62,18 @@
       $(document).ready(function () {
           $('#myTable').DataTable();
       });
+
+      new DataTable('#myTable', {
+        destroy: true,
+        language: {
+        info: 'Mostrando _PAGE_ a _PAGES_',
+        infoEmpty: 'Ningun usuario encontrado',
+        infoFiltered: '(filtrados de _MAX_ registros totales)',
+        lengthMenu: 'Mostrar _MENU_ registros por pagina',
+        zeroRecords: 'Ningun usuario encontrado',
+        search: 'Buscar',
+        
+    }
+});
     </script>
 </html>

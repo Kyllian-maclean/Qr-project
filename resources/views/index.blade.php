@@ -110,5 +110,17 @@
           $('#myTable').DataTable();
       });
 
+      new DataTable('#myTable', {
+        destroy: true,
+        language: {
+        info: 'Mostrando _PAGE_ a _PAGES_',
+        infoEmpty: 'Ningun usuario encontrado',
+        infoFiltered: '(filtrados de _MAX_ registros totales)',
+        lengthMenu: 'Mostrar _MENU_ registros por pagina',
+        zeroRecords: 'Ningun usuario encontrado',
+        search: 'Buscar',
+        
+    }
+});
     </script>
 </html>

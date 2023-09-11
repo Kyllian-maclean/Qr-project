@@ -2,7 +2,7 @@
 @extends('index')
 
 @section('content')
-    <a href="{{ route('fichas.index') }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('fichas.index') }}" id="btnBack" class="btn btn-success">Retroceder</a>
 
     <div class="titulos">
         <div>

@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <a href="{{ route('fichas.index') }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('fichas.index') }}" id="btnBack" class="btn btn-success">Retroceder</a>
 
     <div class="titulos">
         <div>
@@ -33,7 +33,7 @@
             </div>
             
             
-            <button type="submit" class="guardar btn btn-primary">Actualizar</button>
+            <button type="submit" class="guardar btn btn-success">Actualizar</button>
             <a href="{{ route('fichas.index') }}" class=" guardar btn btn-secondary">Cancelar</a>
         </form>
     </div>

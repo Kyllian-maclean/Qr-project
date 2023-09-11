@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <a href="{{ route('fichas.instructor.view', ['ficha' => $ficha]) }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('fichas.instructor.view', ['ficha' => $ficha]) }}" id="btnBack" class="btn btn-success">Retroceder</a>
 
 <div class="titulos">
     <div>

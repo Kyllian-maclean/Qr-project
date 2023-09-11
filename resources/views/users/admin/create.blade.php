@@ -2,7 +2,7 @@
 @extends('index')
 
 @section('content')
-    <a href="{{ route('users.index') }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('users.index') }}" id="btnBack" class="btn btn-success">Retroceder</a>
     
 <div class="titulos-crear">
     <div>
@@ -19,7 +19,7 @@
             @csrf
             <div>
                 <div>
-                    <label class="form-label" for="code" >Codigo</label>
+                    <label class="form-label" for="code" >DNI</label>
                     <input type="number" name="code" id="code" class="input-text" required>
                 </div>
 

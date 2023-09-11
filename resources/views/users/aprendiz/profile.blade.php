@@ -67,14 +67,16 @@
               @if(in_array(1, $userRoleIds))
                 <input disabled class="input" checked type="checkbox" name="admin" id="admin">
               @else
-                <input disabled class=" input" type="checkbox" name="admin" id="admin">
+                <input disabled class="input" type="checkbox" name="admin" id="admin">
               @endif
               <label class="form-check-label" for="admin">Administrador</label>
             </div>
           </div>
         </div>
     </form>
-    
+    <br>
+    <br>
+    <br>
     <div class="info-usuario">
       <form class="" action="{{ route('updatesPassword') }}" method="POST">
         <div class="cambio-contra">     
@@ -84,7 +86,7 @@
             <input type="password" name="currentPassword" id="currentPassword" class="form-control" step="0.01" required>
           </div>
           <div class="coolinput">
-            <label for="newPassword" class="text">Contraseña nueva</label>
+            <label for="newPassword" class="text">Nueva contraseña</label>
             <input type="password" name="newPassword" id="newPassword" class="form-control" step="0.01" required>
           </div>
           <div class="coolinput">
@@ -92,7 +94,7 @@
             <input type="password" name="confirmation" id="confirmation" class="form-control" step="0.01" required>
           </div>
 
-          <input class="btn btn-danger mt-4" type="submit" value="Cambiar Contraseña">
+          <button class="btn btn-danger mt-4" type="submit">Cambiar Contraseña</button>
         </div>
         
       </form>
