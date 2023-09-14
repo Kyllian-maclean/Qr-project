@@ -14,6 +14,7 @@ body{
 
 }
 
+
 .wrapper{
     background: #dcd7d7;
     padding: 0px 20px 0 20px;
@@ -122,9 +123,9 @@ body{
     border-bottom: 1px solid #157347;
   }
 
-  background: #dcd7d7;
+  /* background: #dcd7d7;
   padding: 0px 20px 0 20px;
-}
+} */
   
 .main{
   display: flex;

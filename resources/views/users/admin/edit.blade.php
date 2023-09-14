@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <a href="{{ route('users.index') }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('users.index') }}" id="btnBack" class="btn btn-success">Retroceder</a>
 
 
     <div class="titulos-crear">
@@ -64,6 +64,11 @@
               </div>     
           </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
         <div class="edit">
           <div class="status">
@@ -81,7 +86,7 @@
               
           </div>
           <div class="btn-crear">
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <button type="submit" class="btn btn-success">Actualizar</button>
             <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancelar</a>
           </div>
         </div>

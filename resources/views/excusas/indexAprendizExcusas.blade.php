@@ -5,9 +5,12 @@
 
     <a href="{{ route('excusas.create.index') }}" class="btn btn-success">Crear Excusa</a>
     <br>
-    <br>
-    <h1>Excusas del aprendiz</h1>
-    <br>
+    <div class="titulos">
+    <div>
+        <h1>Excusas del aprendiz</h1>
+    </div>
+</div>
+
 <div>
     <div class="row justify-content-center">
         <div class="table-responsive-xl mt-3">

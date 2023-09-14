@@ -1,10 +1,8 @@
 @extends('index')
 
 @section('content')
-    <a href="{{ route('fichas.index') }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('fichas.index') }}" id="btnBack" class="btn btn-success">Retroceder</a>
     <br>
-    
-
     <div class="titulos-visualizar">
         <div>
            <h1>Ficha</h1>
@@ -32,10 +30,6 @@
                     <option value="inactive" {{ $ficha->status === 'inactive' ? 'selected' : '' }}>Inactivo</option>
                 </select>
             </div>
-
-        
-        
-        
         <br>
     </form>
     <br>

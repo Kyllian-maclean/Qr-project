@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <a href="{{ route('fichas.instructor.view', ['ficha' => $ficha]) }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('fichas.instructor.view', ['ficha' => $ficha]) }}" id="btnBack" class="btn btn-success">Retroceder</a>
 
 <div class="titulos">
     <div>
@@ -12,10 +12,10 @@
 </div>
 <br>
 
-    <form >
+    <form class="visualizar" >
         @csrf
         @method('PUT')
-        <div class="form-group">
+        <div class="form-group" >
             <label for="code">Codigo:</label>
             <input type="number" name="code" id="code" class="form-control" value="{{ $user->code }}" disabled>
         </div>

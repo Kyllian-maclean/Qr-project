@@ -1,7 +1,7 @@
 @extends('index_instructor')
 
 @section('content')
-    <a href="{{ route('fichas.instructor.index') }}" id="btnBack" class="btn btn-primary">Retroceder</a>
+    <a href="{{ route('fichas.instructor.index') }}" id="btnBack" class="btn btn-success">Retroceder</a>
     
 
 <div class="titulos">
@@ -9,8 +9,6 @@
         <h1>Ficha</h1>
     </div>
 </div>
-
-
 
     <form class="visualizar" action="{{ route('fichas.update', ['ficha' => $ficha]) }}" method="POST">
         @csrf
@@ -42,7 +40,7 @@
         <h1>Aprendices</h1>
     </div>
 </div>
-    <a href="{{ route('fichas.instructor.marcar', $ficha->code) }}" class="btn btn-primary">QR</a>
+    <a href="{{ route('fichas.instructor.marcar', $ficha->code) }}" class="btn btn-success">QR</a>
     
     <div class="container2">
         <div class="row justify-content-center">

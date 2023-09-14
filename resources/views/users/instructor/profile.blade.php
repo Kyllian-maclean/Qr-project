@@ -2,87 +2,103 @@
 
 @section('content')
 
-<div class="container mt-4">
-    <h1>Perfil de Usuario</h1>
-    <br>
-    <form action="{{ route('users.update', ['user' => $user] ,['userRoleIds'=>$userRoleIds]) }}" method="POST">
+<div class="container row justify-content-center mt-3 mb-5">
+  <div class="titulos-perfil">
+      <div>
+          <h1>Perfil de usuario</h1>
+      </div>
+  </div>
+    <div class="contenedor-columnas">
+      <form action="{{ route('users.update', ['user' => $user] ,['userRoleIds'=>$userRoleIds]) }}" method="POST">
         @csrf
         @method('PUT')
-        <div class="form-group">
-            <label for="code">Codigo:</label>
-            <input disabled type="number" name="code" id="code" class="form-control" value="{{ $user->code }}" required>
-        </div>
+        <div class="info-usuario"> 
 
-        <div class="form-group">
-            <label for="first_name">Nombres</label>
-            <input disabled type="text" name="first_name" id="first_name" class="form-control" step="0.01" value="{{ $user->first_name }} " required>
-        </div>
+          <div class="coolinput ">
+              <label for="code" class="text">DNI:</label>
+              <input disabled type="text" name="code" id="code" class=" input" value="{{ $user->code }}" required>
+          </div>
 
-        <div class="form-group">
-            <label for="last_name">Apellidos</label>
-            <input disabled type="text" name="last_name" id="last_name" class="form-control" step="0.01" value="{{$user->last_name}}" required>
-        </div>
+          <div class="coolinput ">
+              <label for="first_name" class="text">Nombres</label>
+              <input disabled type="text" name="first_name" id="first_name" class=" input" step="0.01" value="{{ $user->first_name }} " required>
+          </div>
 
-        <div class="form-group">
-            <label for="email">Correo Electronico</label>
-            <input disabled type="email" name="email" id="email" class="form-control" step="0.01" value="{{$user->email}}" required>
-        </div>
+          <div class="coolinput ">
+              <label for="last_name" class="text">Apellidos</label>
+              <input disabled type="text" name="last_name" id="last_name" class=" input" step="0.01" value="{{$user->last_name}}" required>
+          </div>
 
-        <div class="form-group">
-            <label for="status">Estado</label>
-            <select disabled required class="form-control" name="status" id="status">
-                <option value="active" {{ $user->status === 'active' ? 'selected' : '' }}>Activo</option>
-                <option value="inactive" {{ $user->status === 'inactive' ? 'selected' : '' }}>Inactivo</option>
-            </select>
-        </div>
+          <div class="coolinput ">
+              <label for="email" class="text">Correo Electronico</label>
+              <input disabled type="text" name="email" id="email" class=" input" step="0.01" value="{{$user->email}}" required>
+          </div>
+
+          <div class="coolinput ">
+              <label for="status" class="text">Estado</label>
+              <select disabled required class="input" name="status" id="status" type="text">
+                  <option value="active" {{ $user->status === 'active' ? 'selected' : '' }}>Activo</option>
+                  <option value="inactive" {{ $user->status === 'inactive' ? 'selected' : '' }}>Inactivo</option>
+              </select>
+          </div>
         
-        <br>
-        <div class="form-group">
-            <label for="status">Roles</label>
+          <br>
+          <div class="form-group mb-3">
+            <label for="status" class="text">Roles</label>
             <div class="form-check">
               @if(in_array(3, $userRoleIds))
-                <input disabled class="form-check-input" checked type="checkbox" name="aprendiz" id="aprendiz">
+                <input disabled class="input" checked type="checkbox" name="aprendiz" id="aprendiz">
               @else
-                <input disabled class="form-check-input" type="checkbox" name="aprendiz" id="aprendiz">
+                <input disabled class="input" type="checkbox" name="aprendiz" id="aprendiz">
               @endif
-              <label class="form-check-label" for="aprendiz">Aprendiz</label>
+              <label class="text" for="aprendiz">Aprendiz</label>
             </div>
             <div class="form-check">
               @if(in_array(2, $userRoleIds))
-                <input disabled class="form-check-input" checked type="checkbox" name="instructor" id="instructor">
+                <input disabled class="input" checked type="checkbox" name="instructor" id="instructor">
               @else
-                <input disabled class="form-check-input" type="checkbox" name="instructor" id="instructor">
+                <input disabled class="input" type="checkbox" name="instructor" id="instructor">
               @endif
-              <label class="form-check-label" for="instructor">Instructor</label>
+              <label class="text" for="instructor">Instructor</label>
             </div>
             <div class="form-check">
               @if(in_array(1, $userRoleIds))
-                <input disabled class="form-check-input" checked type="checkbox" name="admin" id="admin">
+                <input disabled class="input" checked type="checkbox" name="admin" id="admin">
               @else
-                <input disabled class="form-check-input" type="checkbox" name="admin" id="admin">
+                <input disabled class="input" type="checkbox" name="admin" id="admin">
               @endif
-              <label class="form-check-label" for="admin">Administrador</label>
+              <label class="text" for="admin">Administrador</label>
             </div>
           </div>
-    </form>
-    <div class="mt-4">
-      <form action="{{ route('updatesPassword') }}" method="POST">
-        @csrf
-        <div class="form-group">
-          <label for="currentPassword">Contraseña actual</label>
-          <input type="password" name="currentPassword" id="currentPassword" class="form-control" step="0.01" required>
         </div>
-        <div class="form-group">
-          <label for="newPassword">Contraseña nueva</label>
-          <input type="password" name="newPassword" id="newPassword" class="form-control" step="0.01" required>
-        </div>
-        <div class="form-group">
-          <label for="confirmation">Confirmar</label>
-          <input type="password" name="confirmation" id="confirmation" class="form-control" step="0.01" required>
-        </div>
-
-        <input class="btn btn-danger" type="submit" value="Cambiar Contraseña">
       </form>
+      <br>
+      <br>
+      <br>
+
+      <div class="info-usuario">
+        <form action="{{ route('updatesPassword') }}" method="POST">
+          
+          <div class="cambio-contra">     
+            @csrf
+
+            <div class="coolinput">
+              <label for="currentPassword" class="text">Contraseña actual</label>
+              <input type="password" name="currentPassword" id="currentPassword" class="form-control" step="0.01" required>
+            </div>
+            <div class="coolinput">
+              <label for="newPassword" class="text">Contraseña nueva</label>
+              <input type="password" name="newPassword" id="newPassword" class="form-control" step="0.01" required>
+            </div>
+            <div class="coolinput">
+              <label for="confirmation" class="text">Confirmar</label>
+              <input type="password" name="confirmation" id="confirmation" class="form-control" step="0.01" required>
+            </div>
+
+            <button class="btn btn-danger mt-4 mb-5" type="submit">Cambiar Contraseña</button>
+          </div>
+        </form>
+      </div>
     </div>
 </div>
 

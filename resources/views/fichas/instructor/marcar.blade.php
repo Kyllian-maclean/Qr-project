@@ -1,7 +1,7 @@
 @extends('index_instructor')
-
-
 @section('content')
+
+<a href="{{ route('fichas.instructor.view', ['ficha' => $ficha]) }}" id="btnBack" class="btn btn-success">Retroceder</a>
 
 <div class="titulos">
     <div>
@@ -9,16 +9,14 @@
     </div>
 </div>
 
-<form  action="{{ route('fichas.instructor.asistenceQr') }}" method="POST">
+<form  class="marcar" action="{{ route('fichas.instructor.asistenceQr') }}" method="POST">
         @csrf
 
         <input readonly hidden type="text" placeholder="" value="{{ $ficha->code }}"  name="ficha">
-        <input class="form-control3"type="text" placeholder="Escanar el QR" id='datos'  name="datos" autofocus>
-        <button type="submit" value="ok" name="capturar" id="ejecutar" class="btn btn-primary">Enviar</button>
+        <input hidden class="form-control3"type="text" placeholder="Escanear el QR" id='datos'  name="datos" autofocus>
+        <button hidden type="submit" value="ok" name="capturar" id="ejecutar" class="enviar btn btn-success">Enviar</button>
     </form>
 
-
-    
     <div class="qr">
         <div class="left">
             <div class="col-mb-6">
