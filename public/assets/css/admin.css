@@ -15,7 +15,7 @@ body{
     
 }
  
-
+/* -------navbar---------------- */
 .navbar{
   background-color: #ebebe6;
   display: flex;
@@ -47,6 +47,7 @@ body{
 
 @media screen and 
 (max-width: 600px){
+  
   .menu{
     width: 100%;
     max-height: 0;
@@ -71,7 +72,7 @@ body{
   }
 }
 
-/* Titulos */
+/* ----------------Principal------------------- */
 
 .titulos{
     display: flex;
@@ -115,7 +116,6 @@ body{
 
 form{
   margin-left: 10px;
-  display: flex;
   justify-content: center;
   align-items: center;
   
@@ -149,7 +149,7 @@ form{
 
 :root {
     --dark: #5a5a5a;
-    --beige: rgb(203, 199, 199);
+    --beige: #CBC7C7; 
     --green: #39A900;
     --brown: #8b6932;
     --white: #ffffff;
@@ -247,9 +247,17 @@ form{
   }
 
   .form-body {
+    gap: 60px;
     background-color: var(--beige);
     padding: 20px 15px;
     border-radius: 8px;
+  }
+
+  .form-body2 {
+    background-color: var(--beige);
+    padding: 20px 15px;
+    border-radius: 8px;
+    display: flex;
   }
 
   .form-label {
@@ -268,6 +276,7 @@ form{
   }
 
   .input-text {
+    
     background-color: var(--white);
     box-sizing: border-box;
     padding: 15px 12px;
@@ -340,7 +349,7 @@ form{
   @media screen and (min-width: 700px) {
     .form-body {
       display: flex;
-      gap: 60px;
+      /* gap: 60px; */
       justify-content: space-between;
       padding: 28px 30px;
     }
@@ -361,6 +370,8 @@ form{
       margin-bottom: 0;
       text-align: center;
     }
+
+    
   }
   /* :: checkbox styles :: */
   [type=checkbox]:not(:checked),
@@ -460,22 +471,21 @@ form{
   align-items: center;
   max-width: 800px;
   height: 150px;
-  background-color: #dedbdb;
+  /* background-color: #dedbdb; */
   margin: auto;
   padding: 30px 0;
   border-radius: 8px;
   color: #0a0a0b;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
   font-weight:bold;
 } 
 
 .label{
-  
   margin-left: 10px ;
 }
 
+
 .form-control2{
- 
   width: 98%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   height: 40px;
@@ -486,10 +496,27 @@ form{
   padding: 3px;
 }
 
+.form-control3{
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 40px;
+  background-color: var(--white);
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px  transparent; 
+  padding: 3px;
+}
+ 
+
 .form-group{
   margin-right: 8px;
 }
 .guardar{
+  margin-top: 40px;
+  margin-right: 5px;
+}
+
+.vincular{
   margin-top: 40px;
   margin-right: 5px;
 }
@@ -533,6 +560,7 @@ form{
 
 .visualizar{
   margin-bottom: 20px;
+  display: flex;
 }
 
 .content-table-visualizar{
@@ -557,6 +585,7 @@ form{
     background-color: var(--green) !important;
     color: #dedbdb !important;
   }
+  
 
   
 
@@ -808,6 +837,18 @@ input[type="file"]::file-selector-button:active {
     width: auto;
   }
 
+  .visualizar{
+    display: block;
+  }
+
+  .form-control3{
+    width: 100%;
+  }
+
+  .form-body2{
+    display: block;
+  }
+
 }
 @media (max-width: 560px) {
   .dash-content .boxes .box{
@@ -852,10 +893,15 @@ input[type="file"]::file-selector-button:active {
 
   .contenedor-columnas{
     display:block;
+    width: 100%;
   }
 
   .info-parrafo{
     width: auto;
+  }
+
+  .cambio-contra{
+    margin-bottom: 0;
   }
 
 }

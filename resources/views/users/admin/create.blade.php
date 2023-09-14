@@ -50,37 +50,42 @@
                             <input  type="checkbox" name="admin" id="admin">
                             <label  for="admin">Administrador</label>
                         </div>
+                        
                     </div>
                     
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
         
-            <div class="create">
-                <div class="status">
-                    <label for="form-label" class="form-label">Estado</label>
-                    <select  required class="form-control" name="status" id="status">
-                        <option value="active">Activo</option>
-                        <option value="inactive">Inactivo</option>
-                    </select>
-                </div>
-                <br>
-                
-                <div>
-                    <label class="form-label" for="email">Correo Electronico</label>
-                    <input type="email" name="email" id="email" class="input-text" step="0.01"  required>                   
-                </div>
-                
+                <div class="create">
+                    <div class="status">
+                        <label for="form-label" class="estado form-label ">Estado</label>
+                        <select  required class="form-control" name="status" id="status">
+                            <option value="active">Activo</option>
+                            <option value="inactive">Inactivo</option>
+                        </select>
+                    </div>
+                    <br>
+                    
+                    <div>
+                        <label class="form-label" for="email">Correo Electronico</label>
+                        <input type="email" name="email" id="email" class="input-text" step="0.01"  required>                   
+                    </div>
+                    
 
-                <div>
-                    <label class="form-label  "for="password">Contraseña</label>
-                    <input type="password" name="password" id="password" class="input-text" required>
+                    <div>
+                        <label class="form-label  "for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" class="input-text" required>
+                    </div>
+                    
+                    <div class="btn-crear">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancelar</a>
+                    </div>
                 </div>
-                
-                <div class="btn-crear">
-                    <button type="submit" class="btn btn-success">Guardar</button>
-                    <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancelar</a>
-                </div>
-            </div>
         </form>
     </main>
     @if(session('error'))

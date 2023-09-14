@@ -21,8 +21,8 @@
       <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> -->
-      <input type="checkbox" id="toggler">
-      <Label for="toggler"><i class="navbar-toggler-icon"></i></Label>
+      <input hidden type="checkbox" id="toggler">
+      <Label  for="toggler"><i class="navbar-toggler-icon"></i></Label>
       <div class="menu navbar-collapse" id="navbarNav">
         <ul class="list navbar-nav ml-auto">
           <li class="nav-item">
@@ -46,54 +46,7 @@
   </nav>
 <div class="container mt-4 mb-4 ">
     @yield('content')
-    <!-- <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Informacion general</span>
-                </div>
-
-                <div class="boxes">
-                    <div class="box box1">
-                        <i class="uil uil-file-shield-alt"></i>
-                        <span class="text">Total facturas</span>
-                        <span class="number">12</span>
-                    </div>
-                    <div class="box box2">
-                        <i class="uil uil-file-check-alt"></i>
-                        <span class="text">Facturas enviadas</span>
-                        <span class="number">11</span>
-                    </div>
-                    <div class="box box3">
-                        <i class="uil uil-file-times-alt"></i>
-                        <span class="text">Facturas sin enviar</span>
-                        <span class="number">11</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="title">
-                <i class="uil uil-tachometer-fast-alt"></i>
-                <span class="text">Biometric</span>
-            </div>
-
-
-            <div class="info-biometric">
-              <div class="info-parrafo">
-               <p>
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                   Natus quaerat voluptatum explicabo sapiente sequi quam asperiores 
-                   ex earum ea saepe tempore similique facere distinctio temporibus,
-                   aut laboriosam ipsam, animi quos!
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                   Natus quaerat voluptatum explicabo sapiente sequi quam asperiores 
-                   ex earum ea saepe tempore similique facere distinctio temporibus,
-                   aut laboriosam ipsam, animi quos!
-                </p>
-              </div>  
-                <img  src="{{ url('assets/imgs/ilsData.svg') }}" width="300" alt="">
-            </div>    
-        </div> -->
+    
 </div>
 
 <!--nuevo -->
@@ -107,20 +60,22 @@
       });
 
       $(document).ready(function () {
-          $('#myTable').DataTable();
+          $('#myTable').DataTable({
+            "language": { "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json" }
+          });
       });
 
-      new DataTable('#myTable', {
-        destroy: true,
-        language: {
-        info: 'Mostrando _PAGE_ a _PAGES_',
-        infoEmpty: 'Ningun usuario encontrado',
-        infoFiltered: '(filtrados de _MAX_ registros totales)',
-        lengthMenu: 'Mostrar _MENU_ registros por pagina',
-        zeroRecords: 'Ningun usuario encontrado',
-        search: 'Buscar',
+//       new DataTable('#myTable', {
+//         destroy: true,
+//         language: {
+//         info: 'Mostrando _PAGE_ a _PAGES_',
+//         infoEmpty: 'Ningun usuario encontrado',
+//         infoFiltered: '(filtrados de _MAX_ registros totales)',
+//         lengthMenu: 'Mostrar _MENU_ registros por pagina',
+//         zeroRecords: 'Ningun usuario encontrado',
+//         search: 'Buscar',
         
-    }
-});
+//     }
+// });
     </script>
 </html>

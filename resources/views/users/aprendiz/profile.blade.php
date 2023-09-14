@@ -12,7 +12,7 @@
     <form action="{{ route('users.update', ['user' => $user] ,['userRoleIds'=>$userRoleIds]) }}" method="POST">
         @csrf
         @method('PUT')
-      <div class="info-usuario">
+      <div class="info-usuario1">
         
         <div class="coolinput ">
             <label for="code" class="text">DNI:</label>
@@ -78,7 +78,7 @@
     <br>
     <br>
     <div class="info-usuario">
-      <form class="" action="{{ route('updatesPassword') }}" method="POST">
+      <form action="{{ route('updatesPassword') }}" method="POST">
         <div class="cambio-contra">     
           @csrf
           <div class="coolinput">
