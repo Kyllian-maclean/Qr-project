@@ -16,12 +16,12 @@ class InstructorController extends Controller
 {
     public function indexFichasInstructor()
 {   
-    $perPage = 10; // Número de registros por página   
+     
     $fichas = Ficha::select('fichas.*')
     ->join('instructors_fichas', 'fichas.code', '=', 'instructors_fichas.ficha_id')
     ->where('instructors_fichas.user_id', auth()->user()->code)
     ->where('fichas.status', 'active')
-    ->paginate(10);
+    ->get();
 
     return view('fichas.instructor.index', compact('fichas'));
 }
@@ -194,12 +194,12 @@ public function marcarasistencia ($code){
 
 public function viewAsistences($code,Ficha $ficha)
 {
-    $itemsPerPage = 10;
+    
     $asistences = Asistencia::select('asistencias.*')
     ->where('user_id', $code)
     ->join('users', 'asistencias.user_id', '=', 'users.code')
     ->select('asistencias.*', 'users.*')
-    ->paginate($itemsPerPage);
+    ->get();
     $user = User::where('code', $code)->first();
 
     return view('fichas.instructor.asistences', compact('asistences','user','ficha'));
@@ -211,7 +211,7 @@ public function viewExcusas(){
             'users.first_name', 'users.last_name', 'users.code')
     ->join('users', 'excusas.aprendiz_id', '=', 'users.code')
     ->where('excusas.instructor_id', $user->code)
-    ->paginate(10);
+    ->get();
 
     return view('excusas.indexInstructorExcusas', compact('excusas'));
 

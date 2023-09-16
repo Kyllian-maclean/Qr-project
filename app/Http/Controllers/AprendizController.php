@@ -22,10 +22,10 @@ class AprendizController extends Controller
         $user = auth()->user();
         $code = $user->code;
 
-        $itemsPerPage = 10;
+        
         $asistences = Asistencia::select('asistencias.*')
         ->where('user_id', $code)
-        ->paginate($itemsPerPage);
+        ->get();
     
         return view('asistences.indexAprendiz', compact('asistences','user'));
     }
@@ -34,12 +34,12 @@ class AprendizController extends Controller
         $user = auth()->user();
         $code = $user->code;
 
-        $itemsPerPage = 10;
+        
         $excusas = Excusa::select('excusas.id', 'excusas.aprendiz_id', 'excusas.instructor_id', 'excusas.date','excusas.estado','excusas.motivo', 'excusas.file_path',
             'users.first_name', 'users.last_name', 'users.email')
             ->join('users', 'users.code', '=', 'excusas.instructor_id')
             ->where('aprendiz_id', $code)
-            ->paginate($itemsPerPage);
+            ->get();
         
         return view('excusas.indexAprendizExcusas', compact('excusas','user'));
     }

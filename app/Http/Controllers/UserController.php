@@ -19,8 +19,8 @@ class UserController extends Controller
     // Listar todos los usuarios
     public function index()
     {
-        $perPage = 10; // Número de registros por página
-        $users = User::paginate($perPage); // Recuperar los usuarios paginados
+        
+        $users = User::get(); // Recuperar los usuarios paginados
 
         return view('users.admin.index', compact('users'));
     }   

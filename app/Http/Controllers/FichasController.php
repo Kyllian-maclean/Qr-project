@@ -19,8 +19,8 @@ class FichasController extends Controller
 // Listar todas las fichas
 public function index()
 {
-    $perPage = 10; // Número de registros por página   
-    $fichas = Ficha::paginate($perPage); // Recuperar las fichas paginadas
+       
+    $fichas = Ficha::get(); // Recuperar las fichas paginadas
 
     return view('fichas.admin.index', compact('fichas'));
 }
